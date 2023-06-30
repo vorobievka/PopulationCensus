@@ -33,7 +33,6 @@ public class Main {
         List<Person> labourForceList = stream2
                 .filter(value -> value.getEducation().equals(Education.HIGHER))
                 .filter(value -> ((value.getSex().equals(Sex.MAN) && value.getAge() > 18 && value.getAge() <= 65) || (value.getSex().equals(Sex.WOMAN) && value.getAge() > 18 && value.getAge() <= 60)))
-                .filter(value -> value.getAge() <= 65)
                 .sorted(Comparator.comparing(value -> value.getFamily()))
                 .collect(Collectors.toList());
         System.out.println(labourForceList);
